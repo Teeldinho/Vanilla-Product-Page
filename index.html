@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4&display=swap" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              bebasNeue: ['"Bebas Neue"', "sans-serif"],
+              sourceSerif: ['"Source Serif 4"', "serif"],
+              poppins: ["Poppins", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .custom-scrollbar {
+        --scrollbar-height: 4px;
+        --scrollbar-thumb-height: 4px;
+      }
+      ::-webkit-scrollbar {
+        height: var(--scrollbar-height);
+        background: #f1f1f1;
+        border-radius: 8px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #4a5568;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body class="font-bebasNeue bg-white">
+    <main id="app" class="flex items-center h-svh overflow-hidden custom-scrollbar">
+      <section class="gap-4 relative p-4 md:py-20 md:pl-[10vw] md:gap-8 flex-1 w-full h-svh md:w-screen flex flex-col justify-center">
+        <!-- Heading -->
+        <div class="flex items-center justify-between w-full md:pr-[2vw] lg:pr-[10vw] pb-4">
+          <h2 class="w-full text-3xl font-extrabold text-center md:max-w-fit md:text-left font-sourceSerif md:text-3xl">Best Sellers</h2>
+          <a id="link-to-view-all" href="#" class="hidden text-base md:text-lg font-semibold text-gray-500 md:block font-poppins">
+            Shop All Best Sellers →
+          </a>
+        </div>
+
+        <!-- Mobile only -- preview -->
+        <div id="preview-section-container" class="flex flex-col min-w-full gap-8 transition-all duration-2000 md:hidden">
+          <div id="preview-section-view" class="grid flex-1 grid-cols-2 grid-rows-2 gap-4 overflow-y-scroll">
+            <!-- Products will be injected here -->
+          </div>
+
+          <!-- Show More button for mobile view -->
+          <button
+            id="show-more-button"
+            class="flex items-center justify-center w-full px-8 py-4 text-xl font-semibold text-white bg-black rounded-full"
+          >
+            Show More
+          </button>
+        </div>
+
+        <!-- Mobile only -- show more -->
+        <div
+          id="show-more-section-container"
+          class="fixed top-0 left-0 z-50 hidden w-full h-full gap-12 pb-2 transition-all duration-1000 bg-white md:hidden"
+        >
+          <div id="show-more-section-view" class="flex flex-wrap flex-1 gap-8 p-8 overflow-y-scroll">
+            <!-- More products will be injected here -->
+          </div>
+
+          <!-- Close show more overlay button for mobile view -->
+          <button
+            id="close-button"
+            class="absolute flex items-center justify-center px-5 py-3 text-base font-semibold text-white bg-black rounded-full ring ring-white ring-offset-2 top-2 left-2"
+          >
+            X
+          </button>
+        </div>
+
+        <!-- Tablets and Desktop Only: Horizontal Scroll -->
+        <div id="tablet-desktop-section-container" class="hidden">
+          <div
+            id="tablet-desktop-section-view"
+            class="md:flex gap-4 md:gap-6 md:pb-20 lg:pb-24 overflow-x-auto max-w-[92vw] lg:max-w-[94vw] snap-x snap-mandatory custom-scrollbar flex-nowrap"
+          >
+            <!-- Products will be injected here -->
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="src/scripts/main.js"></script>
+    <script type="module" src="src/scripts/scrollbar.js"></script>
+  </body>
+</html>
