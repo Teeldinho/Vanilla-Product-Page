@@ -18,23 +18,52 @@
               sourceSerif: ['"Source Serif 4"', "serif"],
               poppins: ["Poppins", "sans-serif"],
             },
+            keyframes: {
+              "slide-down-enter": {
+                "0%": { transform: "translateY(-100%)" },
+                "100%": { transform: "translateY(0)" },
+              },
+              "slide-down-leave": {
+                "0%": { transform: "translateY(0)" },
+                "100%": { transform: "translateY(-100%)" },
+              },
+            },
+            animation: {
+              "slide-down-enter": "slide-down-enter 2s ease-out forwards",
+              "slide-down-leave": "slide-down-leave 2s ease-in forwards",
+            },
           },
         },
       };
     </script>
-    <style>
-      .custom-scrollbar {
-        --scrollbar-height: 4px;
-        --scrollbar-thumb-height: 4px;
-      }
-      ::-webkit-scrollbar {
-        height: var(--scrollbar-height);
-        background: #f1f1f1;
-        border-radius: 8px;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #4a5568;
-        border-radius: 8px;
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .slide-down-enter-active {
+          @apply animate-slide-down-enter;
+        }
+        .slide-down-leave-active {
+          @apply animate-slide-down-leave;
+        }
+
+        .custom-scrollbar {
+          --scrollbar-height: 4px;
+          --scrollbar-thumb-height: 4px;
+        }
+
+        .custom-scrollbar:hover {
+          --scrollbar-height: 6px;
+          --scrollbar-thumb-height: 6px;
+        }
+
+        ::-webkit-scrollbar {
+          height: var(--scrollbar-height);
+          background: #f1f1f1;
+          border-radius: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+          background: #4a5568;
+          border-radius: 8px;
+        }
       }
     </style>
   </head>
@@ -94,6 +123,5 @@
       </section>
     </main>
     <script type="module" src="src/scripts/main.js"></script>
-    <script type="module" src="src/scripts/scrollbar.js"></script>
   </body>
 </html>
