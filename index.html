@@ -36,6 +36,22 @@
         },
       };
     </script>
+    <style>
+      .custom-scrollbar {
+        --scrollbar-height: 4px;
+        --scrollbar-thumb-height: 4px;
+      }
+      ::-webkit-scrollbar {
+        height: var(--scrollbar-height);
+        background: #f1f1f1;
+        border-radius: 8px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #4a5568;
+        border-radius: 8px;
+      }
+    </style>
+
     <style type="text/tailwindcss">
       @layer utilities {
         .slide-down-enter-active {
@@ -44,28 +60,35 @@
         .slide-down-leave-active {
           @apply animate-slide-down-leave;
         }
+      }
 
-        .custom-scrollbar {
-          --scrollbar-height: 4px;
-          --scrollbar-thumb-height: 4px;
-        }
+      /* Image Swap on Hover */
+      .product-image {
+        transition: opacity 1s ease-in-out;
+      }
+      .product-card:hover .primary-image {
+        opacity: 0;
+      }
+      .product-card:hover .secondary-image {
+        opacity: 1;
+      }
+      .secondary-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+      }
 
-        .custom-scrollbar:hover {
-          --scrollbar-height: 6px;
-          --scrollbar-thumb-height: 6px;
-        }
-
-        ::-webkit-scrollbar {
-          height: var(--scrollbar-height);
-          background: #f1f1f1;
-          border-radius: 8px;
-        }
-        ::-webkit-scrollbar-thumb {
-          background: #4a5568;
-          border-radius: 8px;
-        }
+      #show-more-section-container {
+        transform: translateY(-100vh);
+        transition: transform 2s ease-in-out;
+      }
+      #show-more-section-container.active {
+        transform: translateY(0);
       }
     </style>
+
+    <script type="module" src="src/scripts/main.js" defer></script>
   </head>
   <body class="font-bebasNeue bg-white">
     <main id="app" class="flex items-center h-svh overflow-hidden custom-scrollbar">
@@ -80,7 +103,7 @@
 
         <!-- Mobile only -- preview -->
         <div id="preview-section-container" class="flex flex-col min-w-full gap-8 transition-all duration-2000 md:hidden">
-          <div id="preview-section-view" class="grid flex-1 grid-cols-2 grid-rows-2 gap-4 overflow-y-scroll">
+          <div id="preview-section-view" class="grid flex-1 grid-cols-2 grid-rows-2 gap-6 overflow-y-scroll">
             <!-- Products will be injected here -->
           </div>
 
@@ -96,7 +119,7 @@
         <!-- Mobile only -- show more -->
         <div
           id="show-more-section-container"
-          class="fixed top-0 left-0 z-50 hidden w-full h-full gap-12 pb-2 transition-all duration-1000 bg-white md:hidden"
+          class="fixed top-0 left-0 z-50 hidden w-full h-full gap-12 pb-2 transition-all duration-2000 bg-white md:hidden"
         >
           <div id="show-more-section-view" class="flex flex-wrap flex-1 gap-8 p-8 overflow-y-scroll">
             <!-- More products will be injected here -->
@@ -121,7 +144,34 @@
           </div>
         </div>
       </section>
+
+      <!-- Product Card Template -->
+      <template id="product-card-template">
+        <div class="flex-1 w-full product-card">
+          <div class="flex flex-col flex-1 w-full gap-2 md:gap-3 md:w-72 lg:w-80">
+            <div class="relative rounded-lg overflow-hidden md:h-[355px] w-full">
+              <img src="" alt="" class="primary-image product-image w-full h-48 md:h-full object-cover" />
+              <img src="" alt="" class="secondary-image product-image w-full h-48 md:h-full object-cover" />
+              <div class="absolute flex flex-wrap items-center justify-between w-full gap-2 px-2 top-2">
+                <span
+                  class="label flex items-center justify-center max-w-fit flex-nowrap bg-white text-gray-800 tracking-wider rounded-full text-sm md:text-sm font-medium px-1.5 md:px-3 py-0.20 md:py-1.20 uppercase border-2 border-black"
+                ></span>
+                <span
+                  class="discount flex items-center justify-center max-w-fit flex-nowrap tracking-wider bg-emerald-800/60 rounded-full text-white text-sm md:text-sm font-medium px-1.5 md:px-3 py-0.25 md:py-1.25 uppercase border-1 border-black"
+                ></span>
+              </div>
+            </div>
+            <div class="flex flex-col md:gap-1">
+              <h3 class="title text-lg md:text-xl font-bebasNeue line-clamp-1"></h3>
+              <div class="flex items-center">
+                <div class="stars"></div>
+                <span class="reviews ml-2 text-xs md:text-sm text-gray-500 capitalize line-clamp-1 font-poppins"></span>
+              </div>
+              <span class="price text-base md:text-lg font-semibold text-gray-700 font-poppins"></span>
+            </div>
+          </div>
+        </div>
+      </template>
     </main>
-    <script type="module" src="src/scripts/main.js"></script>
   </body>
 </html>
