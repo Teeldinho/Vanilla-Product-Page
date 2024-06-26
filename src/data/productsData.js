@@ -1,7 +1,7 @@
 export const productsData = [
   {
-    imageSrc: "/Vanilla-Product-Page/public/images/product1.jpg",
-    hoverImageSrc: "/Vanilla-Product-Page/public/images/product1-hover.jpg",
+    imageSrc: "/public/images/product1.jpg",
+    hoverImageSrc: "/public/images/product1-hover.jpg",
     imageAlt: "Nike Soccer Shoe",
     title: "Nike Soccer Shoe",
     description: "High-performance soccer shoes with excellent grip and comfort.",
@@ -12,8 +12,8 @@ export const productsData = [
     discount: 10,
   },
   {
-    imageSrc: "/Vanilla-Product-Page/public/images/product2.jpg",
-    hoverImageSrc: "/Vanilla-Product-Page/public/images/product2-hover.jpg",
+    imageSrc: "/public/images/product2.jpg",
+    hoverImageSrc: "/public/images/product2-hover.jpg",
     imageAlt: "Noise Cancelling Headphones",
     title: "Noise Cancelling Headphones",
     description: "Over-ear headphones with active noise cancellation and superior sound quality.",
@@ -24,8 +24,8 @@ export const productsData = [
     discount: 20,
   },
   {
-    imageSrc: "/Vanilla-Product-Page/public/images/product3.jpg",
-    hoverImageSrc: "/Vanilla-Product-Page/public/images/product3-hover.jpg",
+    imageSrc: "/public/images/product3.jpg",
+    hoverImageSrc: "/public/images/product3-hover.jpg",
     imageAlt: "Chanel No. 5 Perfume",
     title: "Chanel No. 5 Perfume",
     description: "Classic and timeless fragrance for women.",
@@ -36,8 +36,8 @@ export const productsData = [
     discount: 15,
   },
   {
-    imageSrc: "/Vanilla-Product-Page/public/images/product4.jpg",
-    hoverImageSrc: "/Vanilla-Product-Page/public/images/product4-hover.jpg",
+    imageSrc: "/public/images/product4.jpg",
+    hoverImageSrc: "/public/images/product4-hover.jpg",
     imageAlt: "Polaroid Camera",
     title: "Polaroid Camera",
     description: "Instant camera that prints photos instantly. Great for capturing memories.",
@@ -48,8 +48,8 @@ export const productsData = [
     discount: 5,
   },
   {
-    imageSrc: "/Vanilla-Product-Page/public/images/product5.jpg",
-    hoverImageSrc: "/Vanilla-Product-Page/public/images/product5-hover.jpg",
+    imageSrc: "/public/images/product5.jpg",
+    hoverImageSrc: "/public/images/product5-hover.jpg",
     imageAlt: "PlayStation 4",
     title: "PlayStation 4",
     description: "Popular gaming console with a wide variety of games and accessories.",
@@ -60,8 +60,8 @@ export const productsData = [
     discount: 5,
   },
   {
-    imageSrc: "/Vanilla-Product-Page/public/images/product6.jpg",
-    hoverImageSrc: "/Vanilla-Product-Page/public/images/product6-hover.jpg",
+    imageSrc: "/public/images/product6.jpg",
+    hoverImageSrc: "/public/images/product6-hover.jpg",
     imageAlt: "Nike Running Shoe",
     title: "Nike Running Shoe",
     description: "Lightweight running shoes designed for comfort and speed.",
@@ -72,8 +72,8 @@ export const productsData = [
     discount: 10,
   },
   {
-    imageSrc: "/Vanilla-Product-Page/public/images/product7.jpg",
-    hoverImageSrc: "/Vanilla-Product-Page/public/images/product7-hover.jpg",
+    imageSrc: "/public/images/product7.jpg",
+    hoverImageSrc: "/public/images/product7-hover.jpg",
     imageAlt: "Nike Air Force 1",
     title: "Nike Air Force 1",
     description: "Classic basketball shoes with a timeless design.",
@@ -84,8 +84,8 @@ export const productsData = [
     discount: 5,
   },
   {
-    imageSrc: "/Vanilla-Product-Page/public/images/product8.jpg",
-    hoverImageSrc: "/Vanilla-Product-Page/public/images/product8-hover.jpg",
+    imageSrc: "/public/images/product8.jpg",
+    hoverImageSrc: "/public/images/product8-hover.jpg",
     imageAlt: "Cassette Tape",
     title: "Cassette Tape",
     description: "Retro cassette tape for music lovers.",
@@ -96,8 +96,8 @@ export const productsData = [
     discount: undefined,
   },
   {
-    imageSrc: "/Vanilla-Product-Page/public/images/product9.jpg",
-    hoverImageSrc: "/Vanilla-Product-Page/public/images/product9-hover.jpg",
+    imageSrc: "/public/images/product9.jpg",
+    hoverImageSrc: "/public/images/product9-hover.jpg",
     imageAlt: "Cactus Plant",
     title: "Cactus Plant",
     description: "Small cactus plant in a terracotta pot.",
@@ -108,8 +108,8 @@ export const productsData = [
     discount: 15,
   },
   {
-    imageSrc: "/Vanilla-Product-Page/public/images/product10.jpg",
-    hoverImageSrc: "/Vanilla-Product-Page/public/images/product10-hover.jpg",
+    imageSrc: "/public/images/product10.jpg",
+    hoverImageSrc: "/public/images/product10-hover.jpg",
     imageAlt: "Display Stands",
     title: "Display Stands",
     description: "Set of 4 white display stands for showcasing products.",
